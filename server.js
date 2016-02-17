@@ -16,7 +16,7 @@ http.createServer(function(req, res) {
     }
     var date = new Date(dateStr);
     var dateJson = {};
-    if (date.getDate() === "NaN") {
+    if (isNan(date.getDate())) {
         dateJson.unix = null;
         dateJson.natural = null;
     } else {
