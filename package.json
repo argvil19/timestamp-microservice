@@ -16,5 +16,7 @@
   "bugs": {
     "url": "https://github.com/argvil19/timestamp-microservice/issues"
   },
-  "homepage": "https://github.com/argvil19/timestamp-microservice#readme"
+  "homepage": "https://github.com/argvil19/timestamp-microservice#readme",
+  "dependencies": {
+  }
 }

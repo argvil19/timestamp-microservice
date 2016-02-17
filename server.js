@@ -1,8 +1,14 @@
 var http = require("http");
-var port = 8080;
+var port = 80;
+var fs = require("fs");
 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 http.createServer(function(req, res) {
+    if (req.url === "/") {
+        res.setHeader("Content-Type", "text/html");
+        fs.createReadStream('index.html').pipe(res);
+        return;
+    }
     res.setHeader("Content-Type", "application/json");
     var dateStr = decodeURI(req.url.substr(1));
     if (parseInt(dateStr).toString().length === dateStr.length) {
@@ -18,4 +24,4 @@ http.createServer(function(req, res) {
         dateJson.natural = months[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear();
     }
     res.end(JSON.stringify(dateJson));
-    }).listen(port);
+}).listen(port);
