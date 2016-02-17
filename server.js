@@ -1,5 +1,5 @@
 var http = require("http");
-var port = 80;
+var port = process.env.PORT || 3000;
 var fs = require("fs");
 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
