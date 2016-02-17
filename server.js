@@ -6,7 +6,7 @@ var months = ["January", "February", "March", "April", "May", "June", "July", "A
 http.createServer(function(req, res) {
     if (req.url === "/") {
         res.setHeader("Content-Type", "text/html");
-        fs.createReadStream('index.html').pipe(res);
+        fs.createReadStream('./index.html').pipe(res);
         return;
     }
     res.setHeader("Content-Type", "application/json");
